@@ -53,6 +53,6 @@ export const writeFile = (file: string, options: CLIOptions): Promise<void> => {
     })
     .catch(({ message, file, line, column }: SassError) => {
       const location = file ? `(${file}[${line}:${column}])` : "";
-      alerts.error(`${message} ${location}`);
+      alerts.error(`[ERROR] ${message} ${location}`);
     });
 };

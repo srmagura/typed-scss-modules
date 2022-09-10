@@ -12,11 +12,11 @@ import { ConfigOptions } from "./types";
  * @param options the CLI options
  */
 export const watch = (pattern: string, options: ConfigOptions): void => {
-  alerts.success("Watching files...");
+  alerts.success("Initial compilation complete. Watching files...");
 
   chokidar
     .watch(pattern, {
-      ignoreInitial: options.ignoreInitial,
+      ignoreInitial: true,
       ignored: options.ignore,
     })
     .on("change", (path) => {

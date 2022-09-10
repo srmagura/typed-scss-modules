@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "watch examples/basic",
+      "type": "shell",
+      "command": "yarn typed-scss-modules \"examples/basic/**/*.scss\" --includePaths examples/basic/core --aliases.~alias variables --banner \"// example banner\" --watch",
+      "isBackground": true,
+      "problemMatcher": {
+        "fileLocation": "absolute",
+        "pattern": {
+          "regexp": "^\\[ERROR\\](.+)\\((.+)\\[(\\d+:\\d+)\\]\\)$",
+          "message": 1,
+          "file": 2,
+          "location": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "fake regex that will not match anything",
+          "endsPattern": "^Initial compilation complete\\. Watching files\\.\\.\\.$"
+        }
+      }
+    }
+  ]
+}
